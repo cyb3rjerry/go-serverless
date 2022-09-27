@@ -32,15 +32,15 @@ const tableName = "LambdaInGoUser"
 func handler(req events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	switch req.HTTPMethod {
 	case "GET":
-		return handlers.GetUser(req, tableName, dynaClient), nil
+		return handlers.GetUser(req, tableName, dynaClient)
 	case "POST":
-		return handlers.CreateUser(req, tableName, dynaClient), nil
+		return handlers.CreateUser(req, tableName, dynaClient)
 	case "PUT":
-		return handlers.UpdateUser(req, tableName, dynaClient), nil
+		return handlers.UpdateUser(req, tableName, dynaClient)
 	case "DELETE":
-		return handlers.DeleteUser(req, tableName, dynaClient), nil
+		return handlers.DeleteUser(req, tableName, dynaClient)
 	default:
-		return handlers.UnhandledMethod(), nil
+		return handlers.UnhandledMethod()
 	}
 
 }
